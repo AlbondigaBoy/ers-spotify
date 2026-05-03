@@ -7,4 +7,3 @@ requests
 textblob
 wordcloud
 nltk
-io
