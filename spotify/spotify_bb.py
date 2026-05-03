@@ -53,8 +53,8 @@ def main():
 
     nltk.download('stopwords')
 
-    BASE_DIR = Path(__file__).parent
-    DATA_FILE = BASE_DIR / "tracks_features.csv"
+    # DATA_FILE = "tracks_features.csv"
+    DATA_FILE = "bad_bunny_tracks.csv"
     df = load_data(DATA_FILE)
 
 
