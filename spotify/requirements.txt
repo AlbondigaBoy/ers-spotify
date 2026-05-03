@@ -7,4 +7,4 @@ requests
 textblob
 wordcloud
 nltk
-os
+pathlib

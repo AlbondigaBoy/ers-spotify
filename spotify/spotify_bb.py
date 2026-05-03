@@ -1,5 +1,4 @@
-import os
-
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -54,8 +53,8 @@ def main():
 
     nltk.download('stopwords')
 
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    DATA_FILE = os.path.join(BASE_DIR, "tracks_features.csv")
+    BASE_DIR = Path(__file__).parent
+    DATA_FILE = BASE_DIR / "tracks_features.csv"
     df = load_data(DATA_FILE)
 
 
