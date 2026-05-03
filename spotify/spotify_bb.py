@@ -1,4 +1,4 @@
-from pathlib import Path
+from io import StringIO
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -15,6 +15,13 @@ import nltk
 @st.cache_data
 def load_data(file):
     return pd.read_csv(file)
+
+def load_url_data(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return pd.read_csv(StringIO(response.text))
+    else:
+        st.error("Failed to load data from GitHub.")
 
 def artist_id_in_list(artist_ids_str: str, target_id: str) -> bool:
     try:
@@ -55,9 +62,12 @@ def main():
 
     # DATA_FILE = "tracks_features.csv"
     # DATA_FILE = "bad_bunny_tracks.csv"
-    DATA_FILE = "albondigaboy/ers-spotify/main/spotify/bad_bunny_tracks.csv"
-    df = load_data(DATA_FILE)
 
+    # df = load_data(DATA_FILE)
+
+
+    url = "https://raw.githubusercontent.com/AlbondigaBoy/ers-spotify/refs/heads/main/spotify/bad_bunny_tracks.csv"
+    df = load_data(url)
 
     TARGET_ARTIST_ID = '4q3ewBCX7sLwd24euuV69X'
 
