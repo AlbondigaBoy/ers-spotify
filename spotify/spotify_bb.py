@@ -106,9 +106,6 @@ def main():
         ax.legend(fontsize=7)
         st.pyplot(fig)
 
-    # -----------------------------
-    # 🕸️ RADAR
-    # -----------------------------
     st.subheader("Audio Features por Álbum")
 
     RADAR_FEATURES = [
