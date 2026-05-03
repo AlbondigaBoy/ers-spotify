@@ -54,7 +54,8 @@ def main():
     nltk.download('stopwords')
 
     # DATA_FILE = "tracks_features.csv"
-    DATA_FILE = "bad_bunny_tracks.csv"
+    # DATA_FILE = "bad_bunny_tracks.csv"
+    DATA_FILE = "albondigaboy/ers-spotify/main/spotify/bad_bunny_tracks.csv"
     df = load_data(DATA_FILE)
 
 
